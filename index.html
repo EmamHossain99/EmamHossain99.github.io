@@ -1,704 +1,1135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Emam Hossain | Professional Portfolio</title>
-
-    <meta name="description" content="Professional portfolio of Imam Hossain - Graphic Designer, Video Editor and Computer Specialist.">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #080808;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1150px;
-            margin: auto;
-        }
-
-        /* NAVBAR */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(8, 8, 8, 0.95);
-            border-bottom: 1px solid #222;
-            backdrop-filter: blur(10px);
-        }
-
-        .nav-content {
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #d4af37;
-        }
-
-        .menu {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
-
-        .menu a {
-            color: #ddd;
-            transition: 0.3s;
-        }
-
-        .menu a:hover {
-            color: #d4af37;
-        }
-
-        /* HERO */
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            background:
-                radial-gradient(circle at 80% 30%, #252010 0%, transparent 35%),
-                #080808;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .small-title {
-            color: #d4af37;
-            font-size: 18px;
-            margin-bottom: 12px;
-        }
-
-        .hero h1 {
-            font-size: 58px;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #d4af37;
-        }
-
-        .hero p {
-            color: #bbb;
-            font-size: 18px;
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 13px 25px;
-            border-radius: 8px;
-            font-weight: bold;
-            border: 1px solid #d4af37;
-            transition: 0.3s;
-        }
-
-        .btn-primary {
-            background: #d4af37;
-            color: #000;
-        }
-
-        .btn-primary:hover {
-            background: #fff;
-            border-color: #fff;
-        }
-
-        .btn-outline {
-            color: #d4af37;
-        }
-
-        .btn-outline:hover {
-            background: #d4af37;
-            color: #000;
-        }
-
-        .profile-box {
-            display: flex;
-            justify-content: center;
-        }
-
-        .profile {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            border: 4px solid #d4af37;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #151515;
-            color: #777;
-            text-align: center;
-            font-size: 18px;
-        }
-
-        /* SECTIONS */
-        section {
-            padding: 90px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 38px;
-            margin-bottom: 10px;
-        }
-
-        .section-title span {
-            color: #d4af37;
-        }
-
-        .section-title p {
-            color: #999;
-        }
-
-        /* ABOUT */
-        .about {
-            background: #0e0e0e;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .card {
-            background: #151515;
-            border: 1px solid #252525;
-            padding: 30px;
-            border-radius: 15px;
-        }
-
-        .card h3 {
-            color: #d4af37;
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            color: #bbb;
-        }
-
-        /* SKILLS */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .skill {
-            padding: 25px;
-            background: #111;
-            border: 1px solid #292929;
-            border-radius: 12px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .skill:hover {
-            transform: translateY(-5px);
-            border-color: #d4af37;
-        }
-
-        .skill h3 {
-            color: #fff;
-            margin-bottom: 8px;
-        }
-
-        .skill p {
-            color: #888;
-            font-size: 14px;
-        }
-
-        /* SERVICES */
-        .services {
-            background: #0e0e0e;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .service {
-            background: #151515;
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid #292929;
-            transition: 0.3s;
-        }
-
-        .service:hover {
-            border-color: #d4af37;
-            transform: translateY(-5px);
-        }
-
-        .service-icon {
-            font-size: 35px;
-            margin-bottom: 15px;
-        }
-
-        .service h3 {
-            color: #d4af37;
-            margin-bottom: 10px;
-        }
-
-        .service p {
-            color: #aaa;
-        }
-
-        /* PORTFOLIO */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .portfolio-item {
-            height: 220px;
-            background: #151515;
-            border: 1px solid #292929;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #777;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .portfolio-item:hover {
-            border-color: #d4af37;
-            transform: scale(1.02);
-        }
-
-        /* CONTACT */
-        .contact {
-            background: #0e0e0e;
-        }
-
-        .contact-box {
-            max-width: 750px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .contact-box p {
-            color: #aaa;
-            margin-bottom: 25px;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .contact-info a {
-            padding: 12px 20px;
-            background: #151515;
-            border: 1px solid #292929;
-            border-radius: 8px;
-            color: #d4af37;
-        }
-
-        /* FOOTER */
-        footer {
-            padding: 30px 0;
-            text-align: center;
-            border-top: 1px solid #222;
-            color: #777;
-        }
-
-        footer span {
-            color: #d4af37;
-        }
-
-        /* MOBILE */
-        @media (max-width: 800px) {
-
-            .menu {
-                display: none;
-            }
-
-            .hero {
-                min-height: auto;
-                padding: 80px 0;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .buttons {
-                justify-content: center;
-            }
-
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid,
-            .services-grid,
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .profile {
-                width: 230px;
-                height: 230px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Emam Hossain | Professional Portfolio</title>
+
+<meta name="description" content="Professional portfolio of Emam Hossain - Graphic Designer, Video Editor and Computer Specialist.">
+
+<style>
+
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050505;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* =========================
+   LOADING SCREEN
+========================= */
+
+.loader {
+    position: fixed;
+    inset: 0;
+    background: #050505;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: loaderHide 1s ease 2s forwards;
+}
+
+.loader-text {
+    color: #ffd700;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    animation: loaderPulse 1s infinite alternate;
+}
+
+@keyframes loaderPulse {
+    from {
+        opacity: 0.3;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes loaderHide {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #ffd700;
+    opacity: 0.04;
+    filter: blur(120px);
+    border-radius: 50%;
+    top: 10%;
+    left: -200px;
+    z-index: -1;
+    animation: backgroundMove 8s infinite alternate ease-in-out;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #ffd700;
+    opacity: 0.04;
+    filter: blur(120px);
+    border-radius: 50%;
+    bottom: 5%;
+    right: -200px;
+    z-index: -1;
+    animation: backgroundMove 10s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes backgroundMove {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(120px, 80px);
+    }
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(5, 5, 5, 0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+}
+
+.nav-container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #ffd700;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    animation: logoAppear 1s ease;
+}
+
+@keyframes logoAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    max-width: 1150px;
+    margin: auto;
+    padding: 140px 25px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.small-title {
+    color: #ffd700;
+    font-size: 22px;
+    margin-bottom: 15px;
+    animation: slideUp 1s ease 0.4s both;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 82px);
+    line-height: 1;
+    margin-bottom: 25px;
+    animation: slideUp 1s ease 0.7s both;
+}
+
+.hero h1 span {
+    color: #ffd700;
+    display: inline-block;
+    animation: nameGlow 3s infinite alternate;
+}
+
+@keyframes nameGlow {
+    from {
+        text-shadow: 0 0 5px rgba(255,215,0,0.2);
+    }
+    to {
+        text-shadow: 0 0 25px rgba(255,215,0,0.6);
+    }
+}
+
+.hero-description {
+    color: #cccccc;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 650px;
+    animation: slideUp 1s ease 1s both;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    animation: slideUp 1s ease 1.3s both;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 27px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.35s;
+}
+
+.btn-primary {
+    background: #ffd700;
+    color: #000000;
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255,215,0,0.3);
+}
+
+.btn-outline {
+    border: 1px solid #ffd700;
+    color: #ffd700;
+}
+
+.btn-outline:hover {
+    background: #ffd700;
+    color: #000000;
+    transform: translateY(-5px);
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-box {
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+    border: 3px solid #ffd700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: profileAppear 1.5s ease 0.5s both,
+               floating 4s ease-in-out infinite;
+    box-shadow:
+        0 0 30px rgba(255,215,0,0.15),
+        inset 0 0 30px rgba(255,215,0,0.05);
+}
+
+.profile-box::before {
+    content: "";
+    position: absolute;
+    inset: -15px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,215,0,0.35);
+    animation: rotateCircle 10s linear infinite;
+}
+
+.profile-box::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #ffd700;
+    border-radius: 50%;
+    top: 15px;
+    right: 25px;
+    box-shadow: 0 0 20px #ffd700;
+    animation: dotMove 3s infinite alternate;
+}
+
+.profile-placeholder {
+    width: 275px;
+    height: 275px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #151515, #080808);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+@keyframes profileAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes floating {
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes rotateCircle {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dotMove {
+    from {
+        transform: translate(0,0);
+    }
+    to {
+        transform: translate(-10px,10px);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   GENERAL SECTION
+========================= */
+
+section {
+    max-width: 1150px;
+    margin: auto;
+    padding: 100px 25px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.section-title span {
+    color: #ffd700;
+}
+
+.section-title p {
+    color: #999999;
+}
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: all 1s ease;
+}
+
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: all 1s ease;
+}
+
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-box {
+    background: #0d0d0d;
+    border: 1px solid #222222;
+    border-radius: 15px;
+    padding: 40px;
+    line-height: 1.9;
+    color: #cccccc;
+    transition: 0.4s;
+}
+
+.about-box:hover {
+    border-color: rgba(255,215,0,0.5);
+    transform: translateY(-5px);
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    background: #0d0d0d;
+    border: 1px solid #222222;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    border-color: #ffd700;
+    box-shadow: 0 15px 35px rgba(255,215,0,0.08);
+}
+
+.skill-card h3 {
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: #999999;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    padding: 35px;
+    background: linear-gradient(145deg, #101010, #080808);
+    border-radius: 15px;
+    border: 1px solid #222222;
+    transition: 0.4s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: #ffd700;
+}
+
+.service-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: #ffd700;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: #aaaaaa;
+    line-height: 1.7;
+}
+
+/* =========================
+   PORTFOLIO
+========================= */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.portfolio-card {
+    height: 230px;
+    border-radius: 15px;
+    border: 1px solid #222222;
+    background: linear-gradient(145deg, #171717, #090909);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffd700;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    transition: 0.4s;
+}
+
+.portfolio-card::before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 50px;
+    background: rgba(255,215,0,0.08);
+    transform: rotate(-35deg);
+    left: -120%;
+    transition: 0.7s;
+}
+
+.portfolio-card:hover::before {
+    left: 120%;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    border-color: #ffd700;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-box {
+    text-align: center;
+    padding: 60px 30px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #111111, #080808);
+    border: 1px solid #222222;
+}
+
+.contact-box h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.contact-box p {
+    color: #aaaaaa;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: #ffd700;
+    border: 1px solid #ffd700;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.contact-links a:hover {
+    background: #ffd700;
+    color: #000000;
+    transform: translateY(-4px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid #222222;
+    color: #777777;
+}
+
+footer span {
+    color: #ffd700;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 130px;
+    }
+
+    .hero-description {
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .profile-box {
+        width: 250px;
+        height: 250px;
+    }
+
+    .profile-placeholder {
+        width: 220px;
+        height: 220px;
+    }
+
+    .skills-grid,
+    .services-grid,
+    .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .skills-grid,
+    .services-grid,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 70px 20px;
+    }
+
+    .about-box {
+        padding: 25px;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="container nav-content">
+<!-- =========================
+     LOADING SCREEN
+========================= -->
 
-            <div class="logo">EMAM.</div>
-
-            <ul class="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-
-        </div>
-    </nav>
+<div class="loader">
+    <div class="loader-text">EMAM.</div>
+</div>
 
 
-    <!-- HOME -->
-    <section class="hero" id="home">
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-        <div class="container hero-content">
+<nav>
 
-            <div>
+    <div class="nav-container">
 
-                <div class="small-title">
-                    Hello, I'm
-                </div>
-
-                <h1>
-                    Emam <span>Hossain</span>
-                </h1>
-
-                <p>
-                    Graphic Designer, Video Editor and Computer Specialist.
-                    I create professional designs, videos and digital solutions
-                    for individuals and businesses.
-                </p>
-
-                <div class="buttons">
-
-                    <a href="#portfolio" class="btn btn-primary">
-                        View My Work
-                    </a>
-
-                    <a href="#contact" class="btn btn-outline">
-                        Contact Me
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div class="profile-box">
-
-                <div class="profile">
-                    YOUR PHOTO
-                </div>
-
-            </div>
-
+        <div class="logo">
+            EMAM.
         </div>
 
-    </section>
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#services">Services</a>
+            </li>
+
+            <li>
+                <a href="#portfolio">Portfolio</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
 
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
+<!-- =========================
+     HERO SECTION
+========================= -->
 
-        <div class="container">
+<section class="hero" id="home">
 
-            <div class="section-title">
-                <h2>About <span>Me</span></h2>
-                <p>Get to know me and my professional skills.</p>
-            </div>
+    <div class="hero-content">
 
-            <div class="about-grid">
-
-                <div class="card">
-
-                    <h3>Who I Am</h3>
-
-                    <p>
-                        I am Imam Hossain, a creative and computer-skilled
-                        professional interested in Graphic Design, Video Editing
-                        and various computer-based services.
-                    </p>
-
-                </div>
-
-                <div class="card">
-
-                    <h3>What I Do</h3>
-
-                    <p>
-                        I help clients with social media designs, video editing,
-                        MS Office work, Excel, data entry, presentations and
-                        other digital tasks.
-                    </p>
-
-                </div>
-
-            </div>
-
+        <div class="small-title">
+            Hello, I'm
         </div>
 
-    </section>
+        <h1>
+            Emam <span>Hossain</span>
+        </h1>
 
-
-    <!-- SKILLS -->
-    <section id="skills">
-
-        <div class="container">
-
-            <div class="section-title">
-                <h2>My <span>Skills</span></h2>
-                <p>Some of my professional skills.</p>
-            </div>
-
-            <div class="skills-grid">
-
-                <div class="skill">
-                    <h3>Graphic Design</h3>
-                    <p>Adobe Photoshop & Illustrator</p>
-                </div>
-
-                <div class="skill">
-                    <h3>Video Editing</h3>
-                    <p>Professional video editing</p>
-                </div>
-
-                <div class="skill">
-                    <h3>MS Excel</h3>
-                    <p>Spreadsheet and data management</p>
-                </div>
-
-                <div class="skill">
-                    <h3>MS Word</h3>
-                    <p>Documents and professional formatting</p>
-                </div>
-
-                <div class="skill">
-                    <h3>PowerPoint</h3>
-                    <p>Professional presentations</p>
-                </div>
-
-                <div class="skill">
-                    <h3>Data Entry</h3>
-                    <p>Fast and accurate computer work</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SERVICES -->
-    <section class="services" id="services">
-
-        <div class="container">
-
-            <div class="section-title">
-                <h2>My <span>Services</span></h2>
-                <p>What I can help you with.</p>
-            </div>
-
-            <div class="services-grid">
-
-                <div class="service">
-                    <div class="service-icon">🎨</div>
-                    <h3>Graphic Design</h3>
-                    <p>
-                        Social media posts, banners and promotional designs.
-                    </p>
-                </div>
-
-                <div class="service">
-                    <div class="service-icon">🎬</div>
-                    <h3>Video Editing</h3>
-                    <p>
-                        YouTube, social media and promotional video editing.
-                    </p>
-                </div>
-
-                <div class="service">
-                    <div class="service-icon">💻</div>
-                    <h3>Computer Work</h3>
-                    <p>
-                        MS Word, Excel, PowerPoint and data entry services.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PORTFOLIO -->
-    <section id="portfolio">
-
-        <div class="container">
-
-            <div class="section-title">
-                <h2>My <span>Portfolio</span></h2>
-                <p>Some examples of my work.</p>
-            </div>
-
-            <div class="portfolio-grid">
-
-                <div class="portfolio-item">
-                    Portfolio Project 01
-                </div>
-
-                <div class="portfolio-item">
-                    Portfolio Project 02
-                </div>
-
-                <div class="portfolio-item">
-                    Portfolio Project 03
-                </div>
-
-                <div class="portfolio-item">
-                    Portfolio Project 04
-                </div>
-
-                <div class="portfolio-item">
-                    Portfolio Project 05
-                </div>
-
-                <div class="portfolio-item">
-                    Portfolio Project 06
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-
-        <div class="container">
-
-            <div class="section-title">
-                <h2>Contact <span>Me</span></h2>
-                <p>Let's work together.</p>
-            </div>
-
-            <div class="contact-box">
-
-                <p>
-                    If you are interested in working with me,
-                    feel free to contact me through the links below.
-                </p>
-
-                <div class="contact-info">
-
-                    <a href="mailto:your@email.com">
-                        Email Me
-                    </a>
-
-                    <a href="#" target="_blank">
-                        Fiverr
-                    </a>
-
-                    <a href="#" target="_blank">
-                        Facebook
-                    </a>
-
-                    <a href="#" target="_blank">
-                        YouTube
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        <p>
-            © 2026 <span>Imam Hossain</span>.
-            All Rights Reserved.
+        <p class="hero-description">
+            Graphic Designer, Video Editor and Computer Specialist.
+            I create professional designs, videos and digital solutions
+            for individuals and businesses.
         </p>
 
-    </footer>
+        <div class="hero-buttons">
+
+            <a href="#portfolio" class="btn btn-primary">
+                View My Work
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+                Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="profile-box">
+
+        <!-- পরে এখানে তোমার নিজের ছবি বসানো হবে -->
+
+        <div class="profile-placeholder">
+            YOUR PHOTO
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT SECTION
+========================= -->
+
+<section id="about">
+
+    <div class="section-title reveal">
+
+        <h2>About <span>Me</span></h2>
+
+        <p>
+            Get to know me and my work.
+        </p>
+
+    </div>
+
+    <div class="about-box reveal">
+
+        Hello! I'm <strong>Emam Hossain</strong>.
+        I am interested in graphic design, video editing
+        and computer-based digital work.
+
+        I enjoy creating clean, modern and professional
+        digital content for individuals, creators and businesses.
+
+        My goal is to provide useful, creative and professional
+        digital solutions through my skills.
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS SECTION
+========================= -->
+
+<section id="skills">
+
+    <div class="section-title reveal">
+
+        <h2>My <span>Skills</span></h2>
+
+        <p>
+            Skills I use for my digital work.
+        </p>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+        <div class="skill-card reveal">
+            <h3>Graphic Design</h3>
+            <p>Professional social media and digital designs.</p>
+        </div>
+
+        <div class="skill-card reveal">
+            <h3>Video Editing</h3>
+            <p>Creative video editing and content production.</p>
+        </div>
+
+        <div class="skill-card reveal">
+            <h3>MS Excel</h3>
+            <p>Spreadsheet, formulas and office work.</p>
+        </div>
+
+        <div class="skill-card reveal">
+            <h3>MS Word</h3>
+            <p>Professional documents and formatting.</p>
+        </div>
+
+        <div class="skill-card reveal">
+            <h3>PowerPoint</h3>
+            <p>Professional presentation design.</p>
+        </div>
+
+        <div class="skill-card reveal">
+            <h3>Data Entry</h3>
+            <p>Accurate and organized computer data work.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES SECTION
+========================= -->
+
+<section id="services">
+
+    <div class="section-title reveal">
+
+        <h2>My <span>Services</span></h2>
+
+        <p>
+            What I can do for clients.
+        </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
+        <div class="service-card reveal-left">
+
+            <div class="service-icon">
+                🎨
+            </div>
+
+            <h3>
+                Graphic Design
+            </h3>
+
+            <p>
+                Social media posts, banners and other
+                professional digital designs.
+            </p>
+
+        </div>
+
+
+        <div class="service-card reveal">
+
+            <div class="service-icon">
+                🎬
+            </div>
+
+            <h3>
+                Video Editing
+            </h3>
+
+            <p>
+                Clean and engaging video editing
+                for online content.
+            </p>
+
+        </div>
+
+
+        <div class="service-card reveal-right">
+
+            <div class="service-icon">
+                💻
+            </div>
+
+            <h3>
+                Computer Work
+            </h3>
+
+            <p>
+                MS Word, Excel, PowerPoint and
+                other computer-based work.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PORTFOLIO SECTION
+========================= -->
+
+<section id="portfolio">
+
+    <div class="section-title reveal">
+
+        <h2>My <span>Portfolio</span></h2>
+
+        <p>
+            Some examples of my work.
+        </p>
+
+    </div>
+
+
+    <div class="portfolio-grid">
+
+        <div class="portfolio-card reveal">
+            Graphic Design Project
+        </div>
+
+        <div class="portfolio-card reveal">
+            Social Media Design
+        </div>
+
+        <div class="portfolio-card reveal">
+            Video Editing Project
+        </div>
+
+        <div class="portfolio-card reveal">
+            Banner Design
+        </div>
+
+        <div class="portfolio-card reveal">
+            Presentation Design
+        </div>
+
+        <div class="portfolio-card reveal">
+            Excel Project
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT SECTION
+========================= -->
+
+<section id="contact">
+
+    <div class="contact-box reveal">
+
+        <h2>
+            Let's Work <span style="color:#ffd700;">Together</span>
+        </h2>
+
+        <p>
+            Have a project or need digital services?
+            Feel free to contact me.
+        </p>
+
+
+        <div class="contact-links">
+
+            <a href="mailto:your@email.com">
+                Email
+            </a>
+
+            <a href="#" target="_blank">
+                Fiverr
+            </a>
+
+            <a href="#" target="_blank">
+                Facebook
+            </a>
+
+            <a href="#" target="_blank">
+                YouTube
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    © 2026 <span>Emam Hossain</span>.
+    All Rights Reserved.
+
+</footer>
+
+
+<!-- =========================
+     ANIMATION JAVASCRIPT
+========================= -->
+
+<script>
+
+const revealElements = document.querySelectorAll(
+    ".reveal, .reveal-left, .reveal-right"
+);
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("active");
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+
+revealElements.forEach((element) => {
+
+    observer.observe(element);
+
+});
+
+
+/* Portfolio card stagger animation */
+
+const cards = document.querySelectorAll(
+    ".skill-card, .service-card, .portfolio-card"
+);
+
+cards.forEach((card, index) => {
+
+    card.style.transitionDelay =
+        (index % 3) * 0.12 + "s";
+
+});
+
+
+</script>
 
 </body>
 </html>
