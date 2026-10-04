@@ -734,6 +734,90 @@ footer span {
     width: 100%;
     box-sizing: border-box;
 }
+   /* =========================
+   PROJECT GALLERY
+========================= */
+
+.project-gallery details {
+    width: 100%;
+}
+
+.project-cover {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    cursor: pointer;
+    list-style: none;
+}
+
+.project-cover::-webkit-details-marker {
+    display: none;
+}
+
+.project-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.project-cover:hover img {
+    transform: scale(1.03);
+}
+
+.click-more {
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.85);
+    color: #ffd700;
+    padding: 9px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* Hidden images */
+
+.project-gallery-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 15px;
+}
+
+.project-gallery-images img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background: #111;
+    transition: transform 0.3s ease;
+}
+
+.project-gallery-images img:hover {
+    transform: scale(1.04);
+}
+
+
+/* Mobile */
+
+@media (max-width: 550px) {
+
+    .project-gallery-images {
+        grid-template-columns: 1fr;
+    }
+
+    .project-gallery-images img {
+        height: 200px;
+    }
+
+}
 </style>
 </head>
 
@@ -1260,112 +1344,52 @@ footer span {
 
 <!-- Data Entry & Typing -->
 
-<div class="portfolio-card reveal">
+<!-- DATA ENTRY PROJECT GALLERY -->
 
-    <div class="portfolio-image">
+<div class="portfolio-card reveal project-gallery">
 
-        <img src="data-entry-1.jpg"
-             alt="Data Entry and Typing Project">
+    <details>
 
-    </div>
+        <summary class="project-cover">
+
+            <img src="data-entry-1.jpg"
+                 alt="Data Entry Project">
+
+            <div class="click-more">
+                Click to View More
+            </div>
+
+        </summary>
+
+
+        <div class="project-gallery-images">
+
+            <img src="data-entry-2.jpg"
+                 alt="Data Entry Project 2">
+
+            <img src="data-entry-3.jpg"
+                 alt="Data Entry Project 3">
+
+            <img src="data-entry-4.jpg"
+                 alt="Data Entry Project 4">
+
+        </div>
+
+    </details>
+
 
     <div class="portfolio-info">
 
         <span>Data Entry & Typing</span>
 
         <h3>
-            Data Entry & Typing Work
+            Professional Data Entry Work
         </h3>
 
         <p>
             Accurate data entry, fast typing,
             copy-paste work and professional
-            digital document preparation.
-        </p>
-
-    </div>
-
-</div>
-       <!-- Data Entry Project 2 -->
-
-<div class="portfolio-card reveal">
-
-    <div class="portfolio-image">
-
-        <img src="data-entry-2.jpg"
-             alt="Data Entry Project 2">
-
-    </div>
-
-    <div class="portfolio-info">
-
-        <span>Data Entry & Typing</span>
-
-        <h3>
-            Data Entry Project 2
-        </h3>
-
-        <p>
-            Accurate data entry, fast typing
-            and professional digital work.
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- Data Entry Project 3 -->
-
-<div class="portfolio-card reveal">
-
-    <div class="portfolio-image">
-
-        <img src="data-entry-3.jpg"
-             alt="Data Entry Project 3">
-
-    </div>
-
-    <div class="portfolio-info">
-
-        <span>Data Entry & Typing</span>
-
-        <h3>
-            Data Entry Project 3
-        </h3>
-
-        <p>
-            Professional typing, data entry
-            and digital documentation work.
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- Data Entry Project 4 -->
-
-<div class="portfolio-card reveal">
-
-    <div class="portfolio-image">
-
-        <img src="data-entry-4.jpg"
-             alt="Data Entry Project 4">
-
-    </div>
-
-    <div class="portfolio-info">
-
-        <span>Data Entry & Typing</span>
-
-        <h3>
-            Data Entry Project 4
-        </h3>
-
-        <p>
-            Accurate typing, data entry and
-            professional digital work.
+            digital documentation.
         </p>
 
     </div>
