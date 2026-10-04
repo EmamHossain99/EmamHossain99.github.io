@@ -818,6 +818,51 @@ footer span {
     }
 
 }
+   .project-main-image {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.project-main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.click-more {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.85);
+    color: #ffd700;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.project-gallery-images {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 15px;
+}
+
+.project-gallery-images.show {
+    display: grid;
+}
+
+.project-gallery-images img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: #111;
+}
 </style>
 </head>
 
@@ -1348,34 +1393,32 @@ footer span {
 
 <div class="portfolio-card reveal project-gallery">
 
-    <details>
+    <div class="project-main-image"
+         onclick="toggleGallery()">
 
-        <summary class="project-cover">
+        <img src="data-entry-1.jpg"
+             alt="Data Entry Project">
 
-            <img src="data-entry-1.jpg"
-                 alt="Data Entry Project">
-
-            <div class="click-more">
-                Click to View More
-            </div>
-
-        </summary>
-
-
-        <div class="project-gallery-images">
-
-            <img src="data-entry-2.jpg"
-                 alt="Data Entry Project 2">
-
-            <img src="data-entry-3.jpg"
-                 alt="Data Entry Project 3">
-
-            <img src="data-entry-4.jpg"
-                 alt="Data Entry Project 4">
-
+        <div class="click-more">
+            Click to View More
         </div>
 
-    </details>
+    </div>
+
+
+    <div id="dataEntryGallery"
+         class="project-gallery-images">
+
+        <img src="data-entry-2.jpg"
+             alt="Data Entry Project 2">
+
+        <img src="data-entry-3.jpg"
+             alt="Data Entry Project 3">
+
+        <img src="data-entry-4.jpg"
+             alt="Data Entry Project 4">
+
+    </div>
 
 
     <div class="portfolio-info">
@@ -1612,7 +1655,13 @@ footer span {
 ========================= -->
 
 <script>
+function toggleGallery() {
 
+    const gallery = document.getElementById("dataEntryGallery");
+
+    gallery.classList.toggle("show");
+
+}
 const revealElements = document.querySelectorAll(
     ".reveal, .reveal-left, .reveal-right"
 );
